@@ -4,7 +4,9 @@
 
 {% block body %}
     <h2>{{ conference }} Conference</h2>
-
+    <p>
+        <a href="{{ path('homepage') }}">Go back</a>
+    </p>
     {% if comments|length > 0 %}
         {% for comment in comments %}
             {% if comment.photofilename %}
