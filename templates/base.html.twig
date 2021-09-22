@@ -16,6 +16,9 @@
     <body>
         <header>
             <h1><a href="{{ path('homepage') }}">Guestbook</a></h1>
+            <p>
+                <a href="{{ path('admin') }}">Admin</a>
+            </p>
             <ul>
                 {% for conference in conferences %}
                     <li><a href="{{ path('conference', { id: conference.id }) }}">{{ conference }}</a></li>
