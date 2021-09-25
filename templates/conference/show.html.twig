@@ -11,7 +11,7 @@
         <div>There are {{ comments|length }} comments.</div>
         {% for comment in comments %}
             {% if comment.photofilename %}
-                <img src="{{ asset('uploads/photos/' ~ comment.photofilename) }}"/>
+                <img src="{{ asset('uploads/photos/' ~ comment.photofilename) }}" width="80px" alt=""/>
             {% endif %}
 
             <h4>{{ comment.author }}</h4>
