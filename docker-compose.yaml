@@ -8,3 +8,6 @@ services:
             POSTGRES_PASSWORD: pgpass
             POSTGRES_DB: guestbook1
         ports: [5432]
+    mailer:
+        image: schickling/mailcatcher
+        ports: [ 1025, 1080 ]
