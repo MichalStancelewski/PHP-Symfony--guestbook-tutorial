@@ -68,5 +68,4 @@ class AdminController extends AbstractController
 
         return new Response('Done');
     }
- }
 }
