@@ -50,6 +50,16 @@ class ConferenceController extends AbstractController
         return $response;
     }
 
+    #[Route('/conference/header', name: 'conference_header')]
+    public function conferenceHeader(ConferenceRepository $conferenceRepository): Response
+    {
+        $response = new Response($this->twig->render('conference/header.html.twig', [
+            'conferences' => $conferenceRepository->findAll(),
+        ]));
+        $response->setSharedMaxAge(3600);
+        return $response;
+    }
+
     /**
      * @throws SyntaxError
      * @throws RuntimeError
@@ -57,7 +67,7 @@ class ConferenceController extends AbstractController
      * @throws Exception
      */
     #[Route('/conference/{slug}', name: 'conference')]
-   public function show(Request $request, Conference $conference, CommentRepository $commentRepository, string $photoDir): Response
+    public function show(Request $request, Conference $conference, CommentRepository $commentRepository, string $photoDir): Response
     {
         $comment = new Comment();
         $form = $this->createForm(CommentFormType::class, $comment);
@@ -65,12 +75,11 @@ class ConferenceController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $comment->setConference($conference);
             if ($photo = $form['photo']->getData()) {
-                $filename = bin2hex(random_bytes(6)).'.'.$photo->guessExtension();
+                $filename = bin2hex(random_bytes(6)) . '.' . $photo->guessExtension();
                 try {
                     $photo->move($photoDir, $filename);
-                }
-                 catch (FileException $e) {
-                // unable to upload the photo, give up
+                } catch (FileException $e) {
+                    // unable to upload the photo, give up
                 }
                 $comment->setPhotoFilename($filename);
             }
