@@ -49,6 +49,6 @@ class ConferenceControllerTest extends WebTestCase
         self::$container->get(EntityManagerInterface::class)->flush();
 
         $client->followRedirect();
-        $this->assertSelectorExists('div:contains("There are 3 comments")');
+        $this->assertSelectorExists('div:contains("There are 2 comments")');
     }
 }
