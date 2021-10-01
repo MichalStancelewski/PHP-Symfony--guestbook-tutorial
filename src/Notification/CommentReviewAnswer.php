@@ -8,7 +8,7 @@ use Symfony\Component\Notifier\Notification\EmailNotificationInterface;
 use Symfony\Component\Notifier\Notification\Notification;
 use Symfony\Component\Notifier\Recipient\EmailRecipientInterface;
 
-class CommentReviewNotification extends Notification implements EmailNotificationInterface
+class CommentReviewAnswer extends Notification implements EmailNotificationInterface
 {
     private $comment;
 
@@ -16,14 +16,14 @@ class CommentReviewNotification extends Notification implements EmailNotificatio
     {
         $this->comment = $comment;
 
-        parent::__construct('New comment posted');
+        parent::__construct('Your comment has been accepted');
     }
 
     public function asEmailMessage(EmailRecipientInterface $recipient, string $transport = null): ?EmailMessage
     {
         $message = EmailMessage::fromNotification($this, $recipient, $transport);
         $message->getMessage()
-            ->htmlTemplate('emails/comment_notification.html.twig')
+            ->htmlTemplate('emails/comment_notification_after_review.html.twig')
             ->context(['comment' => $this->comment]);
 
         return $message;

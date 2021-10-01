@@ -1,0 +1,11 @@
+{% extends '@email/default/notification/body.html.twig' %}
+
+{% block content %}
+    Author: {{ comment.author }}<br/>
+    Email: {{ comment.email }}<br/>
+
+    <p style="font-style: italic;">
+        {{ comment.text }}
+    </p>
+{% endblock %}
+
