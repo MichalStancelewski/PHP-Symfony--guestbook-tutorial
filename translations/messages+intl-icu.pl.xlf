@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="pl" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="LNAVleg" resname="Give your feedback!">
+        <source>Give your feedback!</source>
+        <target>Zostaw swój komentarz!</target>
+      </trans-unit>
+      <trans-unit id="3Mg5pAF" resname="View">
+        <source>View</source>
+        <target>Zobacz</target>
+      </trans-unit>
+      <trans-unit id="eOy4.6V" resname="Conference Guestbook">
+        <source>Conference Guestbook</source>
+        <target>Księga Gości konferencji</target>
+      </trans-unit>
+      <trans-unit id="jcflisl" resname="Conferece">
+        <source>Conferece</source>
+        <target>Konferencja</target>
+      </trans-unit>
+      <trans-unit id="pXsIpIC" resname="Previous">
+        <source>Previous</source>
+        <target>Poprzednie</target>
+      </trans-unit>
+      <trans-unit id="H.V6Kdf" resname="Next">
+        <source>Next</source>
+        <target>Następne</target>
+      </trans-unit>
+      <trans-unit id="7bokozx" resname="No comments have been posted yet for this conference.">
+        <source>No comments have been posted yet for this conference.</source>
+        <target>Brak komentarzy do tej konferencji.</target>
+      </trans-unit>
+      <trans-unit id="ilFYXWP" resname="Add your own feedback">
+        <source>Add your own feedback</source>
+        <target>Dodaj swój komentarz</target>
+      </trans-unit>
+      <trans-unit id="Dg2dPd6" resname="nb_of_comments">
+        <source>nb_of_comments</source>
+        <target>{count, plural, =0 {Brak komentarzy.} =1 {1 komentarz} other {Liczba komentarzy: #.}}</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
